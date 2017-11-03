@@ -100,7 +100,8 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.usbcontroller=a800000.dwc3 \
     loop.max_part=7 \
     androidboot.init_fatal_reboot_target=recovery \
-    kpti=off
+    kpti=off \
+    printk.devkmsg=on
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
