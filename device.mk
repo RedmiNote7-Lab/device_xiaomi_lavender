@@ -92,6 +92,10 @@ PRODUCT_COPY_FILES += \
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
 
+# Call recording
+PRODUCT_PACKAGES += \
+    com.google.android.apps.dialer.call_recording_audio.features.xml
+
 # Camera
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
