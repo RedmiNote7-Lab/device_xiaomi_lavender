@@ -791,6 +791,7 @@ else
                 echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
                 ;;
             esac
+            echo 40 > /proc/sys/vm/vfs_cache_pressure
         fi
     fi
 
