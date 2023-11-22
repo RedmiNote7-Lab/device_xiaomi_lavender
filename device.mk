@@ -13,6 +13,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Product shipping API
+PRODUCT_SHIPPING_API_LEVEL := 28
+
 # APEX
 PRODUCT_COMPRESSED_APEX := false
 
