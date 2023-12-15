@@ -39,5 +39,9 @@ ro.telephony.block_binder_thread_on_incoming_calls=false
 # Shutdown
 ro.build.shutdown_timeout=2
 
+# SkiaGL Threaded
+debug.renderengine.backend=skiaglthreaded
+renderthread.skia.reduceopstasksplitting=true
+
 # WiFi Display
 media.wfd.max_resolution=8
