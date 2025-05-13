@@ -67,7 +67,7 @@ PRODUCT_PACKAGES += \
 
 # Biometrics
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660 \
+    android.hardware.biometrics.fingerprint@2.1-service.lavender \
     org.ifaa.android.manager
 
 PRODUCT_BOOT_JARS += \
@@ -118,7 +118,7 @@ TARGET_INCLUDE_PIXEL_CHARGER := true
 # ConsumerIR
 BOARD_HAVE_IR := true
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-service.xiaomi_sdm660
+    android.hardware.ir@1.0-service.lavender
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
@@ -293,7 +293,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.xiaomi_sdm660
+    android.hardware.lights-service.lavender
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
@@ -416,7 +416,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.xiaomi_sdm660-libperfmgr \
+    android.hardware.power-service.lavender-libperfmgr \
     libqti-perfd-client
 
 PRODUCT_COPY_FILES += \
