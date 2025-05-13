@@ -1,0 +1,59 @@
+#
+# Copyright (C) 2018-2019 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Inherit from sdm660-common
+include device/xiaomi/sdm660-common/BoardConfigCommon.mk
+
+DEVICE_PATH := device/xiaomi/lavender
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := lavender
+
+# Android Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
+BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
+
+# Display
+TARGET_SCREEN_DENSITY := 420
+
+# Kernel
+TARGET_KERNEL_CONFIG := lavender_defconfig
+BOARD_KERNEL_SEPARATED_DTBO := true
+
+# Manifest
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/manifest.xml
+
+# Partitions
+BOARD_SUPER_PARTITION_SIZE := 6777995264
+BOARD_SUPER_PARTITION_GROUPS := xiaomi_dynamic_partitions
+BOARD_SUPER_PARTITION_METADATA_DEVICE := system
+BOARD_SUPER_PARTITION_BLOCK_DEVICES := system vendor cust
+BOARD_SUPER_PARTITION_SYSTEM_DEVICE_SIZE := 3758096384
+BOARD_SUPER_PARTITION_VENDOR_DEVICE_SIZE := 2147483648
+BOARD_SUPER_PARTITION_CUST_DEVICE_SIZE := 872415232
+BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor system_ext product odm
+BOARD_XIAOMI_DYNAMIC_PARTITIONS_SIZE := 6773800960 # (BOARD_SUPER_PARTITION_SIZE - 4MB 4194304)
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
+
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
+# Recovery
+BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
+# Security patch level
+VENDOR_SECURITY_PATCH := 2021-06-01
+
+# Inherit the proprietary files
+include vendor/xiaomi/lavender/BoardConfigVendor.mk
